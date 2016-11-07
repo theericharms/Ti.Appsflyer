@@ -1,14 +1,15 @@
 ** Android only
 
 ~~~~ 
-APP.APPSFLYER.startTracker("com.polkadoc.ocp","EM3Mu7LDEpVUP5SVw9ULpi");
-APP.APPSFLYER.setCustomerUserId(uuId);
+var AF = require("ti.appsflyer")
+AF.startTracker("COM.APPID","APPSFLYERDEVID");
+AF.setCustomerUserId(uuId);
 
-APP.APPSFLYER.trackAppLaunch();
+AF.trackAppLaunch();
 
-APP.APPSFLYER.trackPurchase({
-	'amount': APP.ORDER.getCachedOrder().orderlines[0].product.price,
-	"service": Alloy.Globals.localStorage.selectedService.code,
+AF.trackPurchase({
+	'amount': 1.00,
+	"service": "any string",
 });
 
 ~~~~ 
