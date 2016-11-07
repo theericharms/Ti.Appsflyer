@@ -3,7 +3,7 @@
 ~~~~ 
 var AF = require("ti.appsflyer")
 AF.startTracker("COM.APPID","APPSFLYERDEVID");
-AF.setCustomerUserId(uuId);
+AF.setCustomerUserId(12334556677);
 
 AF.trackAppLaunch();
 
