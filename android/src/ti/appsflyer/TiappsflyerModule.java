@@ -40,13 +40,6 @@ public class TiappsflyerModule extends KrollModule {
 	String deviceId;
 	static Boolean optOut = false;
 	
-	// Response from isGooglePlayServicesAvailable()
-	@Kroll.constant public static final int SUCCESS = 0;
-	@Kroll.constant public static final int SERVICE_MISSING = 1;
-	@Kroll.constant public static final int SERVICE_VERSION_UPDATE_REQUIRED = 2;
-	@Kroll.constant public static final int SERVICE_DISABLED = 3;
-	@Kroll.constant public static final int SERVICE_INVALID = 9;
-
 	public TiappsflyerModule() {
 		super();
 		this.instance = AppsFlyerLib.getInstance();
