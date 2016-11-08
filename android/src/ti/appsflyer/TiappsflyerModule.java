@@ -49,9 +49,7 @@ public class TiappsflyerModule extends KrollModule {
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app) {
 		Log.i(LCAT, "onAppCreate started");
-//		Log.i(LCAT, "PLAY SERVICES: " + isGooglePlayServicesAvailable());
 	}
-
 
 	@Kroll.method
 	public void startTracker(String appId, String devKey) {
@@ -65,22 +63,7 @@ public class TiappsflyerModule extends KrollModule {
 		
 		Log.i(LCAT, "AppsFlyer App Id: " + this.appId);
 		Log.i(LCAT, "AppsFlyer Dev Key: " + this.devKey);
-		
-		
-//		// provide a way for the user to opt out sending Android Id and IEMI
-//		if(!optOut)
-//		{		
-//			@SuppressWarnings("static-access")
-//			TelephonyManager tm = (TelephonyManager) ctx.getSystemService(ctx.TELEPHONY_SERVICE);
-//			String deviceId = tm.getDeviceId();
-//			String androidId = Secure.getString(ctx.getContentResolver(),Secure.ANDROID_ID);
-//			
-//			AppsFlyerLib.getInstance().setImeiData(androidId);
-//			AppsFlyerLib.getInstance().setAndroidIdData(deviceId);
-//			
-//			Log.i(LCAT, "ANDROID ID: " + androidId);
-//			Log.i(LCAT, "DEVICE ID: " + deviceId);
-//		}
+
 	}	
 
 	@Kroll.method
