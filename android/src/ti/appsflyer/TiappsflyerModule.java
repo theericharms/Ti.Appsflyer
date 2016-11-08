@@ -8,7 +8,6 @@
  */
 package ti.appsflyer;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,11 +20,6 @@ import org.appcelerator.titanium.TiApplication;
 import com.appsflyer.AFInAppEventParameterName;
 import com.appsflyer.AFInAppEventType;
 import com.appsflyer.AppsFlyerLib;
-
-import android.R.string;
-import android.provider.Settings.Secure;
-import android.telephony.TelephonyManager;
-
 
 
 @Kroll.module(name = "Tiappsflyer", id = "ti.appsflyer")
