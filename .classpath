@@ -14,6 +14,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/eharms/Documents/Appcelerator_Studio_Workspace/Ti.AppsFlyer/android/lib/AF-Android-SDK.jar"/>
 	<classpathentry kind="lib" path="/Users/eharms/Library/Application Support/Titanium/mobilesdk/osx/5.5.1.GA/android/kroll-apt.jar"/>
-	<classpathentry kind="lib" path="android/lib/com.google.android.gms.jar"/>
+	<classpathentry kind="lib" path="android/lib/google-play-services-ads.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

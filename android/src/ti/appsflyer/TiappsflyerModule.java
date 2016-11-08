@@ -8,6 +8,7 @@
  */
 package ti.appsflyer;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,14 +17,16 @@ import org.appcelerator.kroll.KrollModule;
 import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.kroll.common.Log;
 import org.appcelerator.titanium.TiApplication;
+
 import com.appsflyer.AFInAppEventParameterName;
 import com.appsflyer.AFInAppEventType;
 import com.appsflyer.AppsFlyerLib;
 
+import android.R.string;
 import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 
-import com.google.android.gms.common.GooglePlayServicesUtil;
+
 
 @Kroll.module(name = "Tiappsflyer", id = "ti.appsflyer")
 public class TiappsflyerModule extends KrollModule {
@@ -53,6 +56,7 @@ public class TiappsflyerModule extends KrollModule {
 	@Kroll.onAppCreate
 	public static void onAppCreate(TiApplication app) {
 		Log.i(LCAT, "onAppCreate started");
+//		Log.i(LCAT, "PLAY SERVICES: " + isGooglePlayServicesAvailable());
 	}
 
 
@@ -70,20 +74,20 @@ public class TiappsflyerModule extends KrollModule {
 		Log.i(LCAT, "AppsFlyer Dev Key: " + this.devKey);
 		
 		
-		// provide a way for the user to opt out sending Android Id and IEMI
-		if(!optOut)
-		{		
-			@SuppressWarnings("static-access")
-			TelephonyManager tm = (TelephonyManager) ctx.getSystemService(ctx.TELEPHONY_SERVICE);
-			String deviceId = tm.getDeviceId();
-			String androidId = Secure.getString(ctx.getContentResolver(),Secure.ANDROID_ID);
-			
-			AppsFlyerLib.getInstance().setImeiData(androidId);
-			AppsFlyerLib.getInstance().setAndroidIdData(deviceId);
-			
-			Log.i(LCAT, "ANDROID ID: " + androidId);
-			Log.i(LCAT, "DEVICE ID: " + deviceId);
-		}
+//		// provide a way for the user to opt out sending Android Id and IEMI
+//		if(!optOut)
+//		{		
+//			@SuppressWarnings("static-access")
+//			TelephonyManager tm = (TelephonyManager) ctx.getSystemService(ctx.TELEPHONY_SERVICE);
+//			String deviceId = tm.getDeviceId();
+//			String androidId = Secure.getString(ctx.getContentResolver(),Secure.ANDROID_ID);
+//			
+//			AppsFlyerLib.getInstance().setImeiData(androidId);
+//			AppsFlyerLib.getInstance().setAndroidIdData(deviceId);
+//			
+//			Log.i(LCAT, "ANDROID ID: " + androidId);
+//			Log.i(LCAT, "DEVICE ID: " + deviceId);
+//		}
 	}	
 
 	@Kroll.method
@@ -122,9 +126,5 @@ public class TiappsflyerModule extends KrollModule {
 	    Log.d(LCAT, "Tried setting clientId to: " + oo);
 		optOut = oo;
 	}
-	
-	@Kroll.method
-	public int isGooglePlayServicesAvailable() {
-		return GooglePlayServicesUtil.isGooglePlayServicesAvailable(TiApplication.getAppRootOrCurrentActivity());
-	}
+		
 }
