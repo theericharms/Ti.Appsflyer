@@ -10,6 +10,10 @@ AF.trackAppLaunch();
 AF.trackPurchase({
 	'amount': 1.00,
 	"service": "any string",
-});
+}); 
+
+asdf
+
+asdfad
 
 ~~~~ 
